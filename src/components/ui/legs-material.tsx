@@ -1,12 +1,12 @@
 "use client";
 import React, { useContext } from "react";
 import CategoryTag from "./category-tag";
-import { seatColorOptions } from "@/utils/static";
-import CategoryColor from "./category-color";
-import { setPillowColor } from "@/state/reducer";
+import { legsMaterialOptions } from "@/utils/static";
+import CategoryImage from "./category-image";
+import { setLegsMaterial } from "@/state/reducer";
 import { AppContext } from "@/state/context";
 
-export default function PillowColor() {
+export default function LegsMaterial() {
   const { dispatch, state } = useContext(AppContext);
 
   return (
@@ -14,26 +14,27 @@ export default function PillowColor() {
       <div className="app_content__box__left">
         <div className="px-4 py-11">
           <h3 className="app_content__box__left__title">
-            Design Your perfect <br /> pillow
+            Choose Your legs <br /> material
           </h3>
         </div>
       </div>
       <div className="app_content__box__right flex items-center flex-1">
         <div className="flex flex-col gap-4">
-          <CategoryTag text="Pillow color" />
+          <CategoryTag text="Legs Material" />
           <p className="app_content__box__right__category">
-            Chose your pillow color
+            Choose legs material
           </p>
 
           <div className="flex gap-2">
-            {seatColorOptions.map((item) => (
-              <CategoryColor
+            {legsMaterialOptions.map((item) => (
+              <CategoryImage
                 key={item.id}
-                activeColor={state.pillowColor.value}
-                color={item.value}
-                layoutId="pillow-color"
+                layoutId="legs-material"
+                activeMaterial={state.legsMaterial.value}
+                img={`/media/images/legs-material/${item.value}.png`}
+                value={item.value}
                 onClick={() => {
-                  dispatch(setPillowColor(item));
+                  dispatch(setLegsMaterial(item));
                 }}
               />
             ))}
@@ -41,10 +42,10 @@ export default function PillowColor() {
 
           <div className="app_content__box__right__info pt-3">
             <h5 className="app_content__box__right__info__title">
-              {state.pillowColor.name}
+              {state.legsMaterial.name}
             </h5>
             <p className="app_content__box__right__info__details">
-              {state.pillowColor.info}
+              {state.legsMaterial.info}
             </p>
           </div>
         </div>

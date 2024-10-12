@@ -1,32 +1,20 @@
 import {
+  legsMaterialOptions,
   pillowColorOptions,
   seatColorOptions,
   seatMaterialOptions,
 } from "@/utils/static";
 
 export interface AppState {
-  chairColor: ChairColor;
-  chairMaterial: ChairMaterial;
-  pillowColor: PillowColor;
+  chairColor: ChairItem;
+  chairMaterial: ChairItem;
+  pillowColor: ChairItem;
+  legsMaterial: ChairItem;
 }
 
-export interface ChairColor {
+export interface ChairItem {
   id: number;
-  color: string;
-  name: string;
-  info: string;
-}
-
-export interface ChairMaterial {
-  id: number;
-  name: string;
   value: string;
-  info: string;
-}
-
-export interface PillowColor {
-  id: number;
-  color: string;
   name: string;
   info: string;
 }
@@ -35,4 +23,5 @@ export const initialAppState: AppState = {
   chairColor: seatColorOptions[0],
   chairMaterial: seatMaterialOptions[0],
   pillowColor: pillowColorOptions[0],
+  legsMaterial: legsMaterialOptions[0],
 };

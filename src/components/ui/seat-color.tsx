@@ -47,8 +47,8 @@ export default function SeatColor() {
             {seatColorOptions.map((item) => (
               <CategoryColor
                 key={item.id}
-                activeColor={state.chairColor.color}
-                color={item.color}
+                activeColor={state.chairColor.value}
+                color={item.value}
                 layoutId="seat-color"
                 onClick={() => {
                   dispatch(setChairColor(item));

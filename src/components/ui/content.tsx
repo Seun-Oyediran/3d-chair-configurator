@@ -3,6 +3,7 @@ import SeatColor from "./seat-color";
 import SeatMaterial from "./seat-material";
 import PillowColor from "./pillow-color";
 import EmptyBox from "./empty-box";
+import LegsMaterial from "./legs-material";
 
 export default function Content() {
   return (
@@ -20,6 +21,10 @@ export default function Content() {
       <EmptyBox />
 
       <PillowColor />
+
+      <EmptyBox />
+
+      <LegsMaterial />
 
       <EmptyBox />
 
