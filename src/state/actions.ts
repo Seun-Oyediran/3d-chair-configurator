@@ -1,24 +1,34 @@
-import { ChairColor, ChairMaterial, PillowColor } from "./state";
+import { ChairItem } from "./state";
 
 export enum ActionType {
   SetChairColor,
   SetChairMaterial,
   SetPillowColor,
+  SetLegsMaterial,
 }
 
 export interface SetChairColor {
   type: ActionType.SetChairColor;
-  payload: ChairColor;
+  payload: ChairItem;
 }
 
 export interface SetChairMaterial {
   type: ActionType.SetChairMaterial;
-  payload: ChairMaterial;
+  payload: ChairItem;
 }
 
 export interface SetPillowColor {
   type: ActionType.SetPillowColor;
-  payload: PillowColor;
+  payload: ChairItem;
 }
 
-export type AppActions = SetChairColor | SetChairMaterial | SetPillowColor;
+export interface SetLegsMaterial {
+  type: ActionType.SetLegsMaterial;
+  payload: ChairItem;
+}
+
+export type AppActions =
+  | SetChairColor
+  | SetChairMaterial
+  | SetPillowColor
+  | SetLegsMaterial;
