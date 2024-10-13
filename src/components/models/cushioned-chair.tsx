@@ -8,8 +8,13 @@ Title: Cushioned Chair
 */
 
 import React, { useContext, useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-import { Color, MeshStandardMaterial } from "three";
+import { useGLTF, useTexture } from "@react-three/drei";
+import {
+  Color,
+  MeshStandardMaterial,
+  MirroredRepeatWrapping,
+  RepeatWrapping,
+} from "three";
 import { AppContext } from "@/state/context";
 import { useFrame } from "@react-three/fiber";
 
@@ -20,13 +25,171 @@ export function CushionedChair(props: any) {
   const { state } = useContext(AppContext);
 
   const pillowMaterialRef = useRef<MeshStandardMaterial>(null);
+  const chairMaterialRef = useRef<MeshStandardMaterial>(null);
+
+  // SEAT MATERIAL STARTS HERE
+  const alcantaraSuede = useTexture({
+    normalMap: "/materials/alcantara-suede/alcantara-suede-normal.jpg",
+    roughnessMap: "/materials/alcantara-suede/alcantara-suede-roughness.jpg",
+    aoMap: "/materials/alcantara-suede/alcantara-suede-ambientOcclusion.jpg",
+  });
+
+  const distressedLeather = useTexture({
+    normalMap: "/materials/distressed-leather/distressed-leather-Normal.jpg",
+    roughnessMap:
+      "/materials/distressed-leather/distressed-leather-Roughness.jpg",
+    aoMap: "/materials/distressed-leather/distressed-leather-Occlusion.jpg",
+  });
+
+  const linenBlend = useTexture({
+    normalMap: "/materials/linen-blend/linen-blend-NORM.jpg",
+    roughnessMap: "/materials/linen-blend/linen-blend-ROUGH.jpg",
+    aoMap: "/materials/linen-blend/linen-blend-OCC.jpg",
+  });
+
+  const texturedWovenFabric = useTexture({
+    normalMap:
+      "/materials/textured-woven-fabric/textured-woven-fabric-NORM.jpg",
+    roughnessMap:
+      "/materials/textured-woven-fabric/textured-woven-fabric-ROUGH.jpg",
+    aoMap: "/materials/textured-woven-fabric/textured-woven-fabric-OCC.jpg",
+  });
+
+  const vintageLeather = useTexture({
+    normalMap: "/materials/vintage-leather/vintage-leather-normal.jpg",
+    roughnessMap: "/materials/vintage-leather/vintage-leather-roughness.jpg",
+    aoMap: "/materials/vintage-leather/vintage-leather-ambientOcclusion.jpg",
+  });
+
+  // SEAT MATERIAL ENDS HERE
+
+  const polishedStainlessSteel = useTexture({
+    map: "/materials/polished-stainless-steel/polished-stainless-steel-basecolor.jpg",
+    normalMap:
+      "/materials/polished-stainless-steel/polished-stainless-steel-normal.jpg",
+    roughnessMap:
+      "/materials/polished-stainless-steel/polished-stainless-steel-roughness.jpg",
+    aoMap:
+      "/materials/polished-stainless-steel/polished-stainless-steel-ambientOcclusion.jpg",
+  });
+
+  const naturalBirchWood = useTexture({
+    map: "/materials/natural-birch-wood/natural-birch-wood-basecolor.jpg",
+    normalMap: "/materials/natural-birch-wood/natural-birch-wood-normal.jpg",
+    roughnessMap:
+      "/materials/natural-birch-wood/natural-birch-wood-roughness.jpg",
+    aoMap:
+      "/materials/natural-birch-wood/natural-birch-wood-ambientOcclusion.jpg",
+  });
+
+  const espressoWood = useTexture({
+    map: "/materials/espresso-wood/espresso-wood-basecolor.jpg",
+    normalMap: "/materials/espresso-wood/espresso-wood-normal.jpg",
+    roughnessMap: "/materials/espresso-wood/espresso-wood-roughness.jpg",
+    aoMap: "/materials/espresso-wood/espresso-wood-ambientOcclusion.jpg",
+  });
+
+  const mapleWood = useTexture({
+    map: "/materials/maple-wood/maple-wood-basecolor.jpg",
+    normalMap: "/materials/maple-wood/maple-wood-normal.jpg",
+    roughnessMap: "/materials/maple-wood/maple-wood-roughness.jpg",
+    aoMap: "/materials/maple-wood/maple-wood-ambientOcclusion.jpg",
+  });
+
+  alcantaraSuede.normalMap.repeat.set(5, 5);
+  alcantaraSuede.roughnessMap.repeat.set(5, 5);
+  alcantaraSuede.aoMap.repeat.set(5, 5);
+
+  alcantaraSuede.normalMap.wrapS = alcantaraSuede.normalMap.wrapT =
+    MirroredRepeatWrapping;
+  alcantaraSuede.roughnessMap.wrapS = alcantaraSuede.roughnessMap.wrapT =
+    MirroredRepeatWrapping;
+  alcantaraSuede.aoMap.wrapS = alcantaraSuede.aoMap.wrapT = RepeatWrapping;
+
+  distressedLeather.normalMap.repeat.set(2, 2);
+  distressedLeather.roughnessMap.repeat.set(2, 2);
+  distressedLeather.aoMap.repeat.set(2, 2);
+
+  distressedLeather.normalMap.wrapS = distressedLeather.normalMap.wrapT =
+    MirroredRepeatWrapping;
+  distressedLeather.roughnessMap.wrapS = distressedLeather.roughnessMap.wrapT =
+    MirroredRepeatWrapping;
+  distressedLeather.aoMap.wrapS = distressedLeather.aoMap.wrapT =
+    RepeatWrapping;
+
+  linenBlend.normalMap.repeat.set(2, 2);
+  linenBlend.roughnessMap.repeat.set(2, 2);
+  linenBlend.aoMap.repeat.set(2, 2);
+
+  linenBlend.normalMap.wrapS = linenBlend.normalMap.wrapT =
+    MirroredRepeatWrapping;
+  linenBlend.roughnessMap.wrapS = linenBlend.roughnessMap.wrapT =
+    MirroredRepeatWrapping;
+  linenBlend.aoMap.wrapS = linenBlend.aoMap.wrapT = RepeatWrapping;
+
+  texturedWovenFabric.normalMap.repeat.set(2, 2);
+  texturedWovenFabric.roughnessMap.repeat.set(2, 2);
+  texturedWovenFabric.aoMap.repeat.set(2, 2);
+
+  texturedWovenFabric.normalMap.wrapS = texturedWovenFabric.normalMap.wrapT =
+    MirroredRepeatWrapping;
+  texturedWovenFabric.roughnessMap.wrapS =
+    texturedWovenFabric.roughnessMap.wrapT = MirroredRepeatWrapping;
+  texturedWovenFabric.aoMap.wrapS = texturedWovenFabric.aoMap.wrapT =
+    RepeatWrapping;
+
+  vintageLeather.normalMap.repeat.set(4, 4);
+  vintageLeather.roughnessMap.repeat.set(4, 4);
+  vintageLeather.aoMap.repeat.set(4, 4);
+
+  vintageLeather.normalMap.wrapS = vintageLeather.normalMap.wrapT =
+    MirroredRepeatWrapping;
+  vintageLeather.roughnessMap.wrapS = vintageLeather.roughnessMap.wrapT =
+    MirroredRepeatWrapping;
+  vintageLeather.aoMap.wrapS = vintageLeather.aoMap.wrapT = RepeatWrapping;
+
+  espressoWood.normalMap.repeat.set(4, 4);
+  espressoWood.roughnessMap.repeat.set(4, 4);
+  espressoWood.aoMap.repeat.set(4, 4);
+
+  espressoWood.normalMap.wrapS = espressoWood.normalMap.wrapT =
+    MirroredRepeatWrapping;
+  espressoWood.roughnessMap.wrapS = espressoWood.roughnessMap.wrapT =
+    MirroredRepeatWrapping;
+  espressoWood.aoMap.wrapS = espressoWood.aoMap.wrapT = RepeatWrapping;
+
+  const seatMaterialOptions = {
+    "alcantara-suede": alcantaraSuede,
+    "distressed-leather": distressedLeather,
+    "linen-blend": linenBlend,
+    "textured-woven-fabric": texturedWovenFabric,
+    "vintage-leather": vintageLeather,
+  };
+
+  const legsMaterialOptions = {
+    // "reinforced-poly-plastic": materials.legs,
+    "polished-stainless-steel": polishedStainlessSteel,
+    "natural-birch-wood": naturalBirchWood,
+    "espresso-wood": espressoWood,
+    "maple-wood": mapleWood,
+  };
 
   useFrame(() => {
     pillowMaterialRef.current?.color?.lerp(
       new Color(state.pillowColor.value),
       0.05
     );
+    chairMaterialRef.current?.color?.lerp(
+      new Color(state.chairColor.value),
+      0.05
+    );
   });
+
+  console.log(
+    !legsMaterialOptions[
+      state.legsMaterial.value as keyof typeof legsMaterialOptions
+    ]
+  );
 
   return (
     <group {...props} position={[0, 0, 0]} dispose={null}>
@@ -40,7 +203,27 @@ export function CushionedChair(props: any) {
           name="Cylinder001_legs_0"
           geometry={nodes.Cylinder001_legs_0.geometry}
           material={materials.legs}
+          visible={
+            !legsMaterialOptions[
+              state.legsMaterial.value as keyof typeof legsMaterialOptions
+            ]
+          }
         />
+        <mesh
+          name="Cylinder001_legs_0"
+          geometry={nodes.Cylinder001_legs_0.geometry}
+        >
+          <meshStandardMaterial
+            visible={
+              !!legsMaterialOptions[
+                state.legsMaterial.value as keyof typeof legsMaterialOptions
+              ]
+            }
+            {...legsMaterialOptions[
+              state.legsMaterial.value as keyof typeof legsMaterialOptions
+            ]}
+          />
+        </mesh>
         <mesh
           name="Cylinder001_pillow_0"
           geometry={nodes.Cylinder001_pillow_0.geometry}
@@ -58,8 +241,27 @@ export function CushionedChair(props: any) {
           name="Cylinder004_legs_0"
           geometry={nodes.Cylinder004_legs_0.geometry}
           material={materials.legs}
+          visible={
+            !legsMaterialOptions[
+              state.legsMaterial.value as keyof typeof legsMaterialOptions
+            ]
+          }
         />
-
+        <mesh
+          name="Cylinder004_legs_0"
+          geometry={nodes.Cylinder004_legs_0.geometry}
+        >
+          <meshStandardMaterial
+            visible={
+              !!legsMaterialOptions[
+                state.legsMaterial.value as keyof typeof legsMaterialOptions
+              ]
+            }
+            {...legsMaterialOptions[
+              state.legsMaterial.value as keyof typeof legsMaterialOptions
+            ]}
+          />
+        </mesh>
         <mesh
           name="Cylinder004_pillow_0"
           geometry={nodes.Cylinder004_pillow_0.geometry}
@@ -74,8 +276,30 @@ export function CushionedChair(props: any) {
         material={materials.legs}
         position={[-49.544, 0, 56.757]}
         rotation={[-Math.PI / 2, 0, 0]}
-        visible={!false}
+        visible={
+          !legsMaterialOptions[
+            state.legsMaterial.value as keyof typeof legsMaterialOptions
+          ]
+        }
       />
+
+      <mesh
+        name="Cylinder002_legs_0"
+        geometry={nodes.Cylinder002_legs_0.geometry}
+        position={[-49.544, 0, 56.757]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      >
+        <meshStandardMaterial
+          visible={
+            !!legsMaterialOptions[
+              state.legsMaterial.value as keyof typeof legsMaterialOptions
+            ]
+          }
+          {...legsMaterialOptions[
+            state.legsMaterial.value as keyof typeof legsMaterialOptions
+          ]}
+        />
+      </mesh>
 
       {/* leg */}
       <mesh
@@ -84,32 +308,53 @@ export function CushionedChair(props: any) {
         material={materials.legs}
         position={[-35.297, 0, 41.829]}
         rotation={[-Math.PI / 2, 0, 0]}
-        visible={!false}
+        visible={
+          !legsMaterialOptions[
+            state.legsMaterial.value as keyof typeof legsMaterialOptions
+          ]
+        }
       />
+      <mesh
+        name="Cylinder003_legs_0"
+        geometry={nodes.Cylinder003_legs_0.geometry}
+        position={[-35.297, 0, 41.829]}
+        rotation={[-Math.PI / 2, 0, 0]}
+      >
+        <meshStandardMaterial
+          visible={
+            !!legsMaterialOptions[
+              state.legsMaterial.value as keyof typeof legsMaterialOptions
+            ]
+          }
+          {...legsMaterialOptions[
+            state.legsMaterial.value as keyof typeof legsMaterialOptions
+          ]}
+        />
+      </mesh>
 
       {/* chair */}
       <mesh
         name="Plane004_chair_0"
         geometry={nodes.Plane004_chair_0.geometry}
-        material={materials.chair}
         position={[-47.208, 18.144, 45.595]}
         rotation={[-Math.PI / 2, 0, 0]}
-        visible={!false}
-      />
+      >
+        <meshStandardMaterial
+          ref={chairMaterialRef}
+          {...seatMaterialOptions[
+            state.chairMaterial.value as keyof typeof seatMaterialOptions
+          ]}
+        />
+      </mesh>
 
       {/* pillow */}
       <mesh
         name="Box001_pillow_0"
         geometry={nodes.Box001_pillow_0.geometry}
-        // material={materials.pillow}
         position={[-44.53, 19.265, 49.271]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
-        <meshStandardMaterial
-          ref={pillowMaterialRef}
-          {...materials.pillow}
-          // color={state.pillowColor.color}
-        />
+        <meshStandardMaterial ref={pillowMaterialRef} {...materials.pillow} />
       </mesh>
     </group>
   );
