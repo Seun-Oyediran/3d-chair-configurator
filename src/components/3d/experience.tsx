@@ -7,19 +7,13 @@ export function Experience() {
     <Fragment>
       <OrbitControls
         maxDistance={80}
-        minDistance={20}
+        minDistance={15}
         minPolarAngle={0}
         maxPolarAngle={Math.PI / 1.9}
         enablePan={false}
       />
       <ambientLight intensity={0.6} />
-      <Stage
-        environment="city"
-        intensity={1}
-        castShadow
-        adjustCamera={false}
-        preset="rembrandt"
-      >
+      <Stage environment="city" intensity={0.1} adjustCamera={false}>
         <group scale={0.7} rotation-y={Math.PI / 2}>
           <CushionedChair />
         </group>
