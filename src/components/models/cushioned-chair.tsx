@@ -185,12 +185,6 @@ export function CushionedChair(props: any) {
     );
   });
 
-  console.log(
-    !legsMaterialOptions[
-      state.legsMaterial.value as keyof typeof legsMaterialOptions
-    ]
-  );
-
   return (
     <group {...props} position={[0, 0, 0]} dispose={null}>
       {/* leg */}
