@@ -12,7 +12,7 @@ export default function SeatMaterial() {
   return (
     <div className="app_content__box app_content__box__ctt">
       <div className="app_content__box__left">
-        <div className="px-4 py-11">
+        <div className="app_content__box__main__title">
           <h3 className="app_content__box__left__title">
             Choose Your chair material
           </h3>

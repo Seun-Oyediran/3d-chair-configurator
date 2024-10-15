@@ -9,5 +9,9 @@
     font-size: 16px;
     letter-spacing: -0.04em;
     color: #4f4f4f;
+
+    @include screen("sm") {
+      font-size: 15px;
+    }
   }
 }

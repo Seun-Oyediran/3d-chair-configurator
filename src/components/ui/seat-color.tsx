@@ -13,8 +13,8 @@ export default function SeatColor() {
 
   return (
     <div className="app_content__box app_content__box__ctt">
-      <div className="app_content__box__left">
-        <div className="px-4 py-11">
+      <div className="app_content__box__left app_content_main__md">
+        <div className="app_content__box__main__title">
           <h3 className="app_content__box__left__title">
             Design Your perfect <br /> seat
           </h3>
