@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../../public/scss/main.scss";
 import Provider from "@/state/provider";
+import { Loader } from "@react-three/drei";
 
 export const metadata: Metadata = {
   title: "3D Chair Configurator",
