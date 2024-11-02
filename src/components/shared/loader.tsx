@@ -6,7 +6,7 @@ import { useProgress } from "@react-three/drei";
 
 export function Loader() {
   const { loaded, total, active } = useProgress();
-  const progress = (loaded / total) * 100;
+  const progress = (loaded / total) * 100 || 0;
 
   const [shown, setShown] = useState(true);
 
