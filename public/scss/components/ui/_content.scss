@@ -7,9 +7,9 @@
   overflow-y: auto;
   height: 100%;
 
-  @include screen("xl") {
-    overflow-y: hidden;
-  }
+  // @include screen("xl") {
+  //   overflow-y: hidden;
+  // }
 
   &__box {
     height: 100px;

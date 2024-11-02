@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useProgress } from "@react-three/drei";
@@ -7,6 +8,8 @@ import { useProgress } from "@react-three/drei";
 export function Loader() {
   const { loaded, total, active } = useProgress();
   const progress = (loaded / total) * 100 || 0;
+
+  // console.log(progress);
 
   const [shown, setShown] = useState(true);
 
