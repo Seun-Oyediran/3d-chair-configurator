@@ -5,7 +5,10 @@ import { Content } from "@/components/ui";
 import { Canvas } from "@react-three/fiber";
 import Link from "next/link";
 import { NorthEast } from "@/components/shared/svgs/icons";
-import { Loader, RenderIf } from "@/components/shared";
+import { Loader } from "@/components/shared";
+import dynamic from "next/dynamic";
+
+const DynamicLoader = dynamic(() => import("../components/shared/loader"));
 
 export default function Home() {
   return (
@@ -37,9 +40,8 @@ export default function Home() {
           </div>
         </div>
         <div className="app_main__canvas">
-          <RenderIf condition={true}>
-            <Loader />
-          </RenderIf>
+          <DynamicLoader />
+
           <Canvas
             shadows
             id="c"

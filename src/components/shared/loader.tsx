@@ -5,7 +5,7 @@ import { useProgress } from "@react-three/drei";
 // import { emojiPaths } from "@/utils/static";
 // import { SvgMorph } from "./svg-morph";
 
-export function Loader() {
+export default function Loader() {
   const { loaded, total, active } = useProgress();
   const progress = (loaded / total) * 100 || 0;
 
@@ -15,7 +15,7 @@ export function Loader() {
 
   useEffect(() => {
     let t: any;
-    if (active !== shown) t = setTimeout(() => setShown(active), 300);
+    if (active !== shown) t = setTimeout(() => setShown(active), 1000);
     return () => clearTimeout(t);
   }, [shown, active]);
 
