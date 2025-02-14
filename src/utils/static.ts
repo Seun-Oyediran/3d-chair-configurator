@@ -218,3 +218,191 @@ export const emojiPaths = {
   head,
   mouth,
 };
+
+export const imagesData = [
+  {
+    id: 1,
+    cover: "https://i.scdn.co/image/ab67616d0000b273c6e0948bbb0681ff29cdbae8",
+    album: "2014 Forest Hills Drive",
+    year: "2014",
+  },
+  {
+    id: 2,
+    cover: "https://i.scdn.co/image/ab67616d0000b273a29bd588f4caf84bd4cd6f8b",
+    album: "Pray for Paris",
+    year: "2020",
+  },
+  {
+    id: 3,
+    cover: "https://i.scdn.co/image/ab67616d0000b273680f7aff18376de523d7dea5",
+    album: "Introspection",
+    year: "2020",
+  },
+  {
+    id: 4,
+    cover: "https://i.scdn.co/image/ab67616d0000b2737fcead687e99583072cc217b",
+    album: "BBTM",
+    year: "2015",
+  },
+  {
+    id: 5,
+    cover: "https://i.scdn.co/image/ab67616d0000b273045fc920ecf4f8094888ec26",
+    album: "Illmatic",
+    year: "1994",
+  },
+  {
+    id: 6,
+    cover: "https://i.scdn.co/image/ab67616d0000b2732cd55246d935a8a77cb4859e",
+    album: "GKMC",
+    year: "2012",
+  },
+  {
+    id: 7,
+    cover: "https://i.scdn.co/image/ab67616d0000b273158c84a1b6f8b935dc7fa9a9",
+    album: "Trilogy",
+    year: "2012",
+  },
+  {
+    id: 8,
+    cover: "https://i.scdn.co/image/ab67616d0000b2732a7db835b912dc5014bd37f4",
+    album: "TLOP",
+    year: "2016",
+  },
+  {
+    id: 9,
+    cover: "https://i.scdn.co/image/ab67616d0000b273c5649add07ed3720be9d5526",
+    album: "Blonde",
+    year: "2016",
+  },
+  {
+    id: 10,
+    cover: "https://i.scdn.co/image/ab67616d0000b273f8e77075414234fd77fce32b",
+    album: "Malibu",
+    year: "2016",
+  },
+  {
+    id: 11,
+    cover: "https://i.scdn.co/image/ab67616d0000b273ab6b9fb78a5506e4b4d40429",
+    album: "Process",
+    year: "2017",
+  },
+  {
+    id: 12,
+    link: "https://open.spotify.com/album/1DF9B2hfwX4EdgEFwGcRwh?si=OaFnB5ZRREWZXeG3VYWssA&nd=1&dlsi=259b2932f3b64360",
+    cover: "https://i.scdn.co/image/ab67616d0000b2732bdcb339402ebd78651f09c8",
+    album: "Icarus Falls",
+    year: "2018",
+  },
+
+  {
+    id: 13,
+    link: "https://open.spotify.com/album/2ZUFSbIkmFkGag000RWOpA?si=bIFiDfEaRhyMjJJOgbIr0A&nd=1&dlsi=d941e82059b1475c",
+    cover: "https://i.scdn.co/image/ab67616d0000b273adfb5909ec66db5fbb4d06c8",
+    album: "NWTS",
+    year: "2013",
+  },
+
+  {
+    id: 14,
+    link: "https://open.spotify.com/album/1q4B7r3dzzwkarZ1B9bk9e?si=C2JdqAWgT_CNfoh839fjtw&nd=1&dlsi=000ceadb107e4fa2",
+    cover: "https://i.scdn.co/image/ab67616d0000b273090b1f9557a6d23c0817bd88",
+    album: "PARTYNEXTDOOR",
+    year: "2013",
+  },
+
+  {
+    id: 15,
+    link: "https://open.spotify.com/album/5h0KYWMZIg8xT6eRGYkNMh?si=IzgIoobERUuWRZyKqun-ew&nd=1&dlsi=f33937d884d84a92",
+    cover: "https://i.scdn.co/image/ab67616d0000b27321b2b485aef32bcc96c1875c",
+    album: "Because the Internet",
+    year: "2013",
+  },
+
+  {
+    id: 16,
+    link: "https://open.spotify.com/album/6xlQNGdro3cCcn8v1ZEGm3?si=sXqrjUKXRK6LF_v9Rf54Ag&nd=1&dlsi=721ec75a88bb4269",
+    cover: "https://i.scdn.co/image/ab67616d0000b273329731739d6e673ba7b247da",
+    album: "Burden of Proof",
+    year: "2020",
+  },
+
+  {
+    id: 17,
+    link: "https://open.spotify.com/album/43uErencdmuTRFZPG3zXL1?si=jm1UUl1nTmWI-ogaucQDfg&nd=1&dlsi=5a9b923927404415",
+    cover: "https://i.scdn.co/image/ab67616d0000b273d844f6b7311a69b9a08e7a0f",
+    album: "Piñata",
+    year: "2014",
+  },
+
+  {
+    id: 18,
+    link: "https://open.spotify.com/album/0jipZxGtkTDHjVerLkzO80?si=dvuIFlSdS1mWHzd2J-AuIg&nd=1&dlsi=b4d8acc3b31547f3",
+    cover: "https://i.scdn.co/image/ab67616d0000b2730fbb5046ac2211a4aab5ecfa",
+    album: "Teflon Don",
+    year: "2010",
+  },
+
+  {
+    id: 19,
+    link: "https://open.spotify.com/album/6eZdwrhB97A3EYx9QppGfl?si=3QZ6mEjpR6WF34Pl5kxgEg&nd=1&dlsi=d5b0145051fd40ee",
+    cover: "https://i.scdn.co/image/ab67616d0000b273d5f3cea8affdca01a0dc754f",
+    album: "T R A P S O U L",
+    year: "2015",
+  },
+
+  {
+    id: 20,
+    link: "https://open.spotify.com/album/07bIdDDe3I3hhWpxU6tuBp?si=2g9mVVL9RyGrzEfvE0Fccw&nd=1&dlsi=4685ddcc87cc48d5",
+    cover: "https://i.scdn.co/image/ab67616d0000b273263555eebbe2b375593aa31e",
+    album: "DAYTONA",
+    year: "2018",
+  },
+
+  {
+    id: 21,
+    link: "https://open.spotify.com/album/4PWBTB6NYSKQwfo79I3prg?si=w5HPLDviQUKogAfNu8Oj8g&nd=1&dlsi=40ea43fb4c054a60",
+    cover: "https://i.scdn.co/image/ab67616d0000b2736cfd9a7353f98f5165ea6160",
+    album: "Rodeo",
+    year: "2015",
+  },
+
+  {
+    id: 22,
+    link: "https://open.spotify.com/album/1bwbZJ6khPJyVpOaqgKsoZ?si=FVYjRp8FRlmmBdOjSdrzFw&nd=1&dlsi=3119e3f616994bb4",
+    cover: "https://i.scdn.co/image/ab67616d0000b2736ed9aef791159496b286179f",
+    album: "ATSV Soundtrack",
+    year: "2023",
+  },
+
+  {
+    id: 23,
+    link: "https://open.spotify.com/album/35C2QYq4OgkEXETksStyzz?si=obnU095RR6K7cyULF9LBWg&nd=1&dlsi=e84e4139579841a7",
+    cover: "https://i.scdn.co/image/ab67616d0000b273e9166dea653ce1aa302d2916",
+    album: "La Maquina",
+    year: "2021",
+  },
+
+  {
+    id: 24,
+    link: "https://open.spotify.com/album/7iwGw8ob3YLqZrbKzGFnHi?si=I2AGeUA7QWiJOvyL-MrH5A&nd=1&dlsi=711b808be67b4282",
+    cover: "https://i.scdn.co/image/ab67616d0000b273e4f13cd87b3b1ead6735a520",
+    album: "FREE 6LACK",
+    year: "2016",
+  },
+
+  {
+    id: 25,
+    link: "https://open.spotify.com/album/6ZOa1wCHW2fZlsIYh8Yyw4?si=ItQD-e-AQPaLp3hhHvXnSg&nd=1&dlsi=b678738368e24ef6",
+    cover: "https://i.scdn.co/image/ab67616d0000b273b4b2f31921c8665026be4fd4",
+    album: "FLYGOD",
+    year: "2016",
+  },
+
+  {
+    id: 25,
+    link: "https://open.spotify.com/album/2L13Kv0sx6GPAHo7QTZLAy?si=WzaaHCGLTMupC9bEJao5sw&nd=1&dlsi=ed42d7657f3843a0",
+    cover: "https://i.scdn.co/image/ab67616d0000b273230d88bf27d6ca322fb59eb4",
+    album: "Spilligion",
+    year: "2020",
+  },
+];
