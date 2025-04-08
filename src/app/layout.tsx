@@ -52,6 +52,7 @@ export default function RootLayout({
             sizes="32x32"
             href="/favicon/favicon-32x32.png"
           />
+
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
         </head>
         <body>{children}</body>
